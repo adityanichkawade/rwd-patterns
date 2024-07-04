@@ -1,0 +1,42 @@
+/*
+    Mostly fluid relies on fluid grid and mostly it is applicable for large and medium screen 
+    Eg Desktop and Tablet and particularly margins are adjusted for wider screens.
+    But in case of small screens eg mobile all the columns stack vertically.
+*/
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+.col {
+    text-align: center;
+    padding: 5rem;
+    border: 1px solid black;
+}
+
+
+@media screen and (min-width: 768px) {
+    .container {
+        flex-direction: row;
+        max-width: 1024px;
+        margin: 0 auto;
+        flex-flow: wrap;
+    }
+    
+    .col-1, .col-2 {
+        flex: 1 1 50%;
+    }
+    .col-3 {
+        flex: 1 1 100%;
+    }
+}
