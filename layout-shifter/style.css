@@ -1,0 +1,63 @@
+/*
+    Layout Shifter is used for handling different layouts for different screen sizes
+*/
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.container {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+aside {
+    background: brown;
+}
+
+header {
+    background: aqua;
+}
+
+main {
+    background: purple;
+}
+
+footer {
+    background: pink;
+}
+
+
+@media screen and (min-width: 768px) {
+    .container {
+        flex-direction: row;
+        max-width: 1024px;
+        margin: 0 auto;
+        flex-flow: wrap;
+    }
+    
+    header {
+        flex-basis: 100%;
+        padding: 1rem;
+    }
+    
+    aside {
+        flex-basis: 30%;
+    }
+    
+    main {
+        flex-basis: 70%;
+        padding: 5rem;
+    }
+    
+    footer {
+        flex: 100%;
+        padding: 1rem;
+    }
+}
